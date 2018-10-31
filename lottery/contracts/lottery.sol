@@ -32,7 +32,7 @@ contract Lottery {
 		uint res = uint(sha3(block.difficulty,now,players.length));
 		uint index = res % players.length;
 		winner = players[index];
-		winner.transfer(address(this),balance);
+		winner.transfer(address(this).balance);
 		round++;
 		delete players; // 开奖之后清空彩民集合
 		
@@ -42,7 +42,7 @@ contract Lottery {
 		
 		require (players.length != 0,'players length is not should be 0');
 		for (uint i = 0; i < players.length; i++) {
-			players[i].transfer(i ether);
+			players[i].transfer(1 ether);
 		}
 		round++;
 		delete players;
