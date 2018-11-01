@@ -40,7 +40,7 @@ npm install mocha # 用于测试
 ```
 ## <font color="#00FF7F">1.lottery</font>
 ***
-
+![](https://github.com/AlexBruceLu/DAPP/wiki/lotter.png)
 
 
 ## <font color="#00FF7F">crowdfunding</font>
