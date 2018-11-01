@@ -10,14 +10,15 @@ var web3  = new Web3(provider);
 
 deploy = async () => {
 	try{
-		// accounts = await web3.eth.getAccounts();
+		accounts = await web3.eth.getAccounts();
+		// console.log(accounts);
 		contractInstance = await new web3.eth.Contract(JSON.parse(interface)).deploy(
 			{
 				data: bytecode,
 			}
 		).send({
-			from: '0x8427D31B355F808887eE05743FC13Fecaba0DB93',
-			gas: 1000000,
+			from: accounts[0],
+			gas: '1000000',
 		})
 		console.log('address: ',contractInstance.options.address);
 	}catch(e){
